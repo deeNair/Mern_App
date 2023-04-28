@@ -13,7 +13,7 @@
 https://trello.com/b/o3DUdF4R/mern-application
 
 # Wireframe
-![Screenshot](./src/images/WireframeMern.png)
+![Screenshot](./src/Images/WireframeMern.png)
 
 # Features:
 
