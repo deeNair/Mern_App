@@ -1,9 +1,13 @@
 require('dotenv').config();
 require('./config/database'); // connects to db
+const cors=require('cors');
+const bodyParser= require('body-parser');
+
 const express = require('express');
 const path = require('path'); // node module
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+
 
 const app = express();
 // development port: 3001
@@ -17,6 +21,14 @@ const PORT = process.env.PORT || 3001;
 app.use(logger('dev'));
 // JSON payload middleware (for data coming from frontend functions)
 app.use(express.json());
+
+app.use(bodyParser.json({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(cors());
+
+const Routes=require('./route/route');
+app.use('/',Routes);
+
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
@@ -24,8 +36,11 @@ app.use(express.static(path.join(__dirname, 'build')));
 // checks if token was sent and sets a user data on the req (req.user)
 app.use(require('./config/checkToken'));
 
+
+
 // * All other routes
 app.use('/api/users', require('./routes/api/users'));
+
 
 
 

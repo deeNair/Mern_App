@@ -1,35 +1,44 @@
 import React from 'react';
-import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
 import { useState } from 'react';
+import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
+import { addJobs} from '../service/api';
+
+import { useNavigate } from 'react-router-dom';
 
 const initialValue = {
-    company: '',
-    position: '',
-    jobstatus: '',
-    recruiterEmail: ''
-  }
-  const Container = styled(FormGroup)`
+  company: '',
+  position: '',
+  jobstatus: '',
+  recruiterEmail: ''
+}
+
+const Container = styled(FormGroup)`
     width: 50%;
     margin: 5% 0 0 25%;
     & > div {
         margin-top: 20px;
 `;
-const onValueChange = (e) => {
-      
-    console.log(e.target.name,e.target.value);
-    //setJobs({...jobs,[e.target.name]:e.target.value})
-   //console.log(jobs);
- }
- //take all the details in form(stored in jobs variable and setjob add value entered in form to it) and send to api
- const addJobsDetails = async() => {
-    //call the api  
-    //await addJobs(jobs);
-      //navigate('/all');
-  }
 
-const AddJobs = () => {
-const [jobs, setJobs] = useState(initialValue);
-  return (
+const AddJobs=()=>{
+  const [jobs, setJobs] = useState(initialValue);
+   // const { name, username, email, phone } = user;
+    
+    let navigate = useNavigate();
+
+    const onValueChange = (e) => {
+      
+       //console.log(e.target.name,e.target.value);
+       setJobs({...jobs,[e.target.name]:e.target.value})
+      //console.log(jobs);
+    }
+
+    //take all the details in form(stored in jobs variable and setjob add value entered in form to it) and send to api
+    const addJobsDetails = async() => {
+      //call the api  
+      await addJobs(jobs);
+        navigate('/all');
+    }
+  return(
     <Container>
       <Typography variant="h4">Add jobs</Typography>
       <FormControl>
@@ -54,5 +63,6 @@ const [jobs, setJobs] = useState(initialValue);
     </Container>
   )
 }
-
 export default AddJobs;
+
+
