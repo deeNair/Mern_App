@@ -13,6 +13,7 @@ import './App.css';
 import Interviewprep from './components/Interviewprep';
 import JobHistory from './components/JobHistory';
 import AddJobs from './components/AddJobs';
+import EditJob from './components/EditJob';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -26,8 +27,9 @@ function App() {
         <Route path='/orders/new' element={ <NewOrderPage /> }/>
         <Route path='/orders' element={ <OrderHistoryPage /> }/>
         <Route path='/' element={<Interviewprep/>}></Route>
-       <Route path='all' element={<JobHistory/>}></Route>
-       <Route path='add' element={<AddJobs/>}></Route>
+       <Route path='/all' element={<JobHistory/>}></Route>
+       <Route path='/add' element={<AddJobs/>}></Route>
+       <Route path='/edit/:id' element={<EditJob/>}></Route>
       </Routes>
       </>
      : 

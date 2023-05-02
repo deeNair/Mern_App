@@ -26,3 +26,19 @@ return await axios.get(`${URL}/all`);
     console.log('error calling api',error);
    }
 }
+
+export const getJobOfId=async(id)=>{
+    try {
+        return await axios.get(`${URL}/${id}`);
+    } catch (error) {
+        console.log('error calling api',error);
+    }
+}
+
+export const editJobs = async (jobs,id) => {
+    try {
+        return await axios.post(`${URL}/${id}`,jobs );
+    } catch (error) {
+        console.log('error calling api',error);
+    }
+}

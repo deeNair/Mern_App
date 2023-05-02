@@ -1,3 +1,4 @@
+const { Try } = require('@mui/icons-material');
 const Jobs=require('../models/jSchema')
 
 
@@ -21,6 +22,7 @@ const addJobs=async(request,response)=>{
 
 const getJobs=async(request,response)=>{
  try{
+   //find{} gets all data
      const jobs=await Jobs.find({});
      response.status(200).json(jobs);
  }
@@ -29,5 +31,35 @@ const getJobs=async(request,response)=>{
  }
 }
 
-module.exports={addJobs,getJobs};
+const getJobOfId=async(request,response)=>{
+//console.log(request.params.id);
+
+   try {
+const jobs= await Jobs.findById(request.params.id);
+
+      //const jobs = await Jobs.find({_id: request.params.id});
+      response.status(200).json(jobs);
+
+   } catch (error) {
+      response.status(404).json({message:error.message});
+   }
+
+}
+
+const editJobs=async(request,response)=>{
+   const job=request.body;
+   const editedJobs=new Jobs(job);
+
+   try {
+      await Jobs.updateOne({_id:request.params.id},editedJobs)
+      response.status(201).json(editedJobs);
+      
+   } catch (error) {
+      response.status(404).json({message:error.message});
+   }
+
+
+}
+
+module.exports={addJobs,getJobs,getJobOfId,editJobs};
 
