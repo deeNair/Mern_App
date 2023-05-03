@@ -1,6 +1,9 @@
 {
   "name": "final-project",
   "version": "0.1.0",
+  "engines":{
+    "node":"v16.16.0"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.8",
@@ -28,10 +31,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-prebuild": "npm install"
   },
   "eslintConfig": {
     "extends": [
