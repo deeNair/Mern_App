@@ -37,7 +37,7 @@ const getJobOfId=async(request,response)=>{
    try {
 const jobs= await Jobs.findById(request.params.id);
 
-      //const jobs = await Jobs.find({_id: request.params.id});
+      //const jobs = await Jobs.find({_id:request.params.id});
       response.status(200).json(jobs);
 
    } catch (error) {
@@ -61,5 +61,16 @@ const editJobs=async(request,response)=>{
 
 }
 
-module.exports={addJobs,getJobs,getJobOfId,editJobs};
+const deleteJob=async(request,response)=>{
+
+   try {
+
+      await Jobs.deleteOne({_id:request.params.id});
+      response.status(200).json({message:'user deleted'})
+   } catch (error) {
+      response.status(404).json({message:error.message});
+   }
+}
+
+module.exports={addJobs,getJobs,getJobOfId,editJobs,deleteJob};
 

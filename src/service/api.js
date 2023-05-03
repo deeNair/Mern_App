@@ -37,8 +37,19 @@ export const getJobOfId=async(id)=>{
 
 export const editJobs = async (jobs,id) => {
     try {
+        //axios.put also works
         return await axios.post(`${URL}/${id}`,jobs );
     } catch (error) {
         console.log('error calling api',error);
     }
+}
+
+export const deleteJob =async(id)=>{
+     try {
+
+        return await axios.delete(`${URL}/${id}`);
+        
+     } catch (error) {
+        console.log('error calling api',error);
+     }
 }

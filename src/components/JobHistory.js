@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 
 import { useEffect,useState } from 'react';
-import {getJobs}  from '../service/api';
+import {getJobs,deleteJob}  from '../service/api';
 import { pink } from '@mui/material/colors';
 
 import {Link} from 'react-router-dom';
@@ -23,6 +23,12 @@ const getAllJobs=async()=>{
     console.log(response.data);
 }
 
+const deleteJobs=async(id)=>{
+  await deleteJob(id);
+  getAllJobs();
+}
+
+
   return (
    <Table>
     <TableHead>
@@ -40,19 +46,19 @@ const getAllJobs=async()=>{
       {
         jobs.map((jb)=>
           (
-            <TableRow>
+            <TableRow key={jb._id}>
               <TableCell>{jb._id}</TableCell>
               <TableCell>{jb.company}</TableCell>
               <TableCell>{jb.position}</TableCell>
               <TableCell>{jb.jobstatus}</TableCell>
               <TableCell>{jb.recruiterEmail}</TableCell>
               <TableCell>
-    <Button component={Link} to={`/edit/${jb._id}`}>
+    <Button variant="contained" component={Link} to={`/edit/${jb._id}`}>
                     <EditIcon sx={{ color: pink[500] }}/>
-                </Button>
+                </Button >
               </TableCell>
               <TableCell>
-                <Button>
+                <Button variant="contained" onClick={()=>deleteJobs(jb._id)}>
                   <DeleteIcon sx={{ color: pink[500]}} />
                 </Button>
                 </TableCell>

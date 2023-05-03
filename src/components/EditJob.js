@@ -22,10 +22,11 @@ const Container = styled(FormGroup)`
 const EditJob=()=>{
   const [jobs, setJobs] = useState(initialValue);
    //const { company, position, jobstatus, recruiterEmail } = jobs;
+    //useparams is object so u can destructure id n extract it.
    const {id} = useParams();
    
     let navigate = useNavigate();
-    //useparams is object so u can destructure id n extract it.
+   
 
     useEffect(() => {
       loadJobDetails();

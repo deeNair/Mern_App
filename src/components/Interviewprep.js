@@ -2,8 +2,8 @@ import React from 'react'
 
 const Interviewprep = () => {
   return (
-    <div><h1>Interviewprep</h1></div>
+    <div>Interviewprep</div>
   )
 }
 
-export default Interviewprep
+export default Interviewprep;
