@@ -7,6 +7,7 @@ function NavBar({ user, setUser }) {
     setUser(null);
   };
   return (
+    <div id='navg'>
     <nav>
       <Link to="/">Interview prep</Link>
       &nbsp; | &nbsp;
@@ -22,6 +23,7 @@ function NavBar({ user, setUser }) {
         Logout
       </Link>
     </nav>
+    </div>
   );
 }
 
