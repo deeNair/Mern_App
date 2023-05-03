@@ -14,7 +14,7 @@ const jSchema = new Schema({
   
 });
 autoIncrement.initialize(mongoose.connection);
-jSchema.plugin(autoIncrement.plugin, 'Jobs')
+jSchema.plugin(autoIncrement.plugin, 'Jobs');
 //make a model,jobs a collection
 const Jobs = mongoose.model('Jobs',jSchema);
 module.exports = Jobs;
