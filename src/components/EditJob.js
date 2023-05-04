@@ -12,8 +12,6 @@ const initialValue = {
   recruiterEmail: ''
 }
 
-
-
 const Container = styled(FormGroup)`
 background:#F6F1F1;
 opacity:0.8;
