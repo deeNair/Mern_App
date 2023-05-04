@@ -20,6 +20,8 @@ function NavBar({ user, setUser }) {
       <Tab to="/all">JobHistory</Tab>
 
       <Tab to="/add">AddJobs</Tab>
+
+      <Tab to="/stats">Stats</Tab>
     
       
       <Tab to="" onClick={handleLogOut}>
