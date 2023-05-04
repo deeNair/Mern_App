@@ -124,7 +124,7 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color:#40513B ;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -147,7 +147,7 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: #40513B;
 }
 
 button[type="submit"] {

@@ -15,14 +15,15 @@ function NavBar({ user, setUser }) {
   return (
    <Header>
       <Toolbar >
-      <Tab to="/">Interview prep</Tab>
+      <Tab to="/">Home</Tab>
     
       <Tab to="/all">JobHistory</Tab>
 
       <Tab to="/add">AddJobs</Tab>
 
       <Tab to="/stats">Stats</Tab>
-    
+
+      <Tab to="/int">Interview prep</Tab>
       
       <Tab to="" onClick={handleLogOut}>
         Logout

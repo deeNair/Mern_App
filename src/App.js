@@ -38,7 +38,7 @@ function App() {
       <Routes>
         <Route path='/orders/new' element={ <NewOrderPage /> }/>
         <Route path='/orders' element={ <OrderHistoryPage /> }/>
-        <Route path='/' element={<Interviewprep/>}></Route>
+        <Route path='/int' element={<Interviewprep/>}></Route>
        <Route path='/all' element={<JobHistory/>}></Route>
        <Route path='/add' element={<AddJobs/>}></Route>
        <Route path='/stats' element={<Stats data={data}/>}></Route>

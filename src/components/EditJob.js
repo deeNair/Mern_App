@@ -12,11 +12,18 @@ const initialValue = {
   recruiterEmail: ''
 }
 
+
+
 const Container = styled(FormGroup)`
+background:#F6F1F1;
+opacity:0.8;
+border-radius:10px;
     width: 50%;
+    color:#615954;
     margin: 5% 0 0 25%;
     & > div {
         margin-top: 20px;
+      }
 `;
 
 const EditJob=()=>{
