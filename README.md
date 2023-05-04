@@ -41,3 +41,5 @@ https://vercel.com/deenair/mern-app/Hcn9eyUKqt51U7YQbVuye36nwmab
 https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker
 
 https://www.youtube.com/watch?v=aibtHnbeuio
+
+https://medium.com/tinyso/how-to-create-pie-donut-chart-in-react-using-d3-js-9ea695bcf819
