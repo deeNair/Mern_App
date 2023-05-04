@@ -22,6 +22,10 @@ function App() {
     <main className="App">
      { user ? 
       <>
+       <div class="dash">
+    <h1><span>Welcome to DashBoard</span></h1>
+    </div>
+    <div id="navd">
       <NavBar user={user} setUser={setUser}/>
       <Routes>
         <Route path='/orders/new' element={ <NewOrderPage /> }/>
@@ -31,6 +35,7 @@ function App() {
        <Route path='/add' element={<AddJobs/>}></Route>
        <Route path='/edit/:id' element={<EditJob/>}></Route>
       </Routes>
+      </div>
       </>
      : 
       <AuthPage setUser={setUser}/>

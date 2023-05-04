@@ -22,7 +22,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-  background-image: url("./Images/bg1.jpg");
+  background-image: url(/src/Images/bg1.jpg);
+  background-size: cover;
+  
   padding: 2vmin;
   height: 100vh;
 }
@@ -155,5 +157,27 @@ button[type="submit"] {
 
 #navg{
   background-color:black;
- padding: 20px;
+  padding: 30px;
+  color:whitesmoke;
+  font-size: medium;
+
+
+}
+
+a{
+  color:whitesmoke;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.dash{
+  margin-right:500px;
+  white-space: nowrap;
+   text-overflow: clip;
+   width:500px;
+   background-color:#F6F1F1 ;
+   opacity:0.6;
+   border-radius: 10px;
+   border-style:solid; border-color:#F6F1F1;
+   margin-bottom: 20px;
 }

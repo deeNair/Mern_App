@@ -60,7 +60,7 @@ td, th {
 }
 
 tr, td {
-  background-color: #fcb1a6;
+  background-color:#9DC08B;
   text-align: center;
   padding: 1em;
 }
@@ -69,6 +69,6 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #ffa5ab;
+  background-color:#40513B;
   color: rgb(110, 11, 87);
 }

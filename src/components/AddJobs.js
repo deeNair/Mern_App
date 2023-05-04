@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FormGroup, FormControl, InputLabel, Input, Button, styled, Typography } from '@mui/material';
+//import { grey} from '@mui/material/colors';
 import { addJobs} from '../service/api';
 
 import { useNavigate } from 'react-router-dom';
@@ -12,11 +13,18 @@ const initialValue = {
   recruiterEmail: ''
 }
 
+//const primary = grey[500];
+
 const Container = styled(FormGroup)`
+background:#F6F1F1;
+opacity:0.8;
+border-radius:10px;
     width: 50%;
+    color:#615954;
     margin: 5% 0 0 25%;
     & > div {
         margin-top: 20px;
+      }
 `;
 
 const AddJobs=()=>{
@@ -39,8 +47,10 @@ const AddJobs=()=>{
         navigate('/all');
     }
   return(
+    <div>
+      <h1>Add Jobs</h1>
     <Container>
-      <Typography variant="h4">Add jobs</Typography>
+      <Typography variant="h4"></Typography>
       <FormControl>
         <InputLabel>Company</InputLabel>
         <Input onChange={(e)=>onValueChange(e)} name="company"/>
@@ -61,6 +71,7 @@ const AddJobs=()=>{
         <Button variant='contained' onClick={()=>addJobsDetails()}>Add jobs</Button>
       </FormControl>
     </Container>
+    </div>
   )
 }
 export default AddJobs;

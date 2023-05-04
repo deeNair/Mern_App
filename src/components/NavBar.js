@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { logOut } from "../utilities/users-service";
+import { AppBar,Toolbar,styled } from "@mui/material";
+import { NavLink } from "react-router-dom";
+
+const Header =styled(AppBar)`background: #40513B`;
+const Tab = styled(NavLink)`font-size:20px ;margin-right:40px; color:inherit;text-decoration:none`;
+
 
 function NavBar({ user, setUser }) {
   const handleLogOut = () => {
@@ -7,24 +13,27 @@ function NavBar({ user, setUser }) {
     setUser(null);
   };
   return (
-    <div id='navg'>
-    <nav>
-      <Link to="/">Interview prep</Link>
-      &nbsp; | &nbsp;
-      <Link to="/all">JobHistory</Link>
-      &nbsp; | &nbsp;
-      <Link to="/add">AddJobs</Link>
-      &nbsp; | &nbsp;
-      <Link to="/orders">order History</Link>
-      &nbsp; | &nbsp;
-     
-      <Link to="/orders/new">New order</Link>       &nbsp; | &nbsp;<span>Welcome, {user.name}</span>{" "}
-      <Link to="" onClick={handleLogOut}>
+   <Header>
+      <Toolbar >
+      <Tab to="/">Interview prep</Tab>
+    
+      <Tab to="/all">JobHistory</Tab>
+
+      <Tab to="/add">AddJobs</Tab>
+    
+      
+      <Tab to="" onClick={handleLogOut}>
         Logout
-      </Link>
-    </nav>
-    </div>
+      </Tab>
+      </Toolbar>
+    
+    </Header>
   );
 }
 
 export default NavBar;
+
+/**<Link to="/orders">order History</Link>
+      &nbsp; | &nbsp;
+     
+      <Link to="/orders/new">New order</Link>  */
